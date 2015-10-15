@@ -3,17 +3,16 @@
     var Notification = window.Notification;
 
     // Define our constructor
-    Screamer = function(title, options) {
+    Screamer = function(options) {
 
         // Start the method requesting permission
         // to everything works
         Notification.requestPermission();
 
-        if (typeof title !== 'string') {
+        if (typeof options.title !== 'string') {
             throw new Error('Notify(): first arg (title) must be a string.');
         }
 
-        this.title = title;
         this.options = options;
     };
 
@@ -44,7 +43,7 @@
 
     Screamer.prototype.notify = function() {
         if(this.checkPermission()){
-            var notify = new Notification(this.title, options);
+            var notify = new Notification(options.title, options);
 
             if(this.options.fade){
                 this.fadeNotification(notify, this.options.fade);

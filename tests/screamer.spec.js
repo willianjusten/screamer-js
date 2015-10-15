@@ -1,7 +1,7 @@
 // API stuff
 describe("Support:", function() {
   it("should verify if browser supports Notification API", function(){
-    scream = new Screamer('hello');
+    scream = new Screamer({'title': 'hello'});
     expect(scream.verifySupport()).toBeTruthy();
   });
 });
@@ -19,7 +19,7 @@ describe('Permissions:', function() {
 // Plugin stuff
 describe('Instantiation:', function() {
   it("should instantiate the Screamer object", function() {
-    screamObj = new Screamer('Hello');
+    screamObj = new Screamer({'title': 'hello'});
     expect(screamObj instanceof window.Screamer).toBeTruthy();
   });
 
@@ -32,25 +32,17 @@ describe('Instantiation:', function() {
 
 describe('Parameters:', function() {
   it("should instantiate the Screamer object with title", function() {
-    screamObj = new Screamer('Hello');
-    expect(screamObj.title).toEqual('Hello');
+    screamObj = new Screamer({'title': 'Hello'});
+    expect(screamObj.options.title).toEqual('Hello');
   });
   
   it("should instantiate the Screamer object with body and icon", function() {
     options = {
+      'title': 'hello',
       'body': 'world',
       'icon': '../example/ico_sucesso.png'
     };
-    screamObj = new Screamer('Hello', options);
+    screamObj = new Screamer(options);
     expect(screamObj.options).toEqual(options);
-  });
-
-  it("should instantiate the Screamer object with fade option", function() {
-    options = {
-      'fade': 5000 // time in ms
-    };
-    var screamFade = new Screamer('Hello', options);
-    spyOn(screamFade, 'fadeNotification');
-    expect(screamFade.fadeNotification).toHaveBeenCalled();
   });
 });

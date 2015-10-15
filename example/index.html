@@ -12,23 +12,25 @@
 <script src="../screamer.js"></script>
 <script type="text/javascript">
     var options = {
-        'body': 'world',
+        'title': 'Hello',
+        'body': 'world!',
         'icon': 'ico_sucesso.png',
         'fade': 1000
     };
 
-    var scream = new Screamer('Hello', options);
+    var scream = new Screamer(options);
     var button = document.querySelector('#fade');
     button.addEventListener('click', function(){
         scream.notify();
     });
 
     var optionsNotFade = {
-        'body': 'world',
+        'title': 'Hello',
+        'body': 'world!',
         'icon': 'ico_sucesso.png',
     };
 
-    var screamNotFade = new Screamer('Hello', optionsNotFade);
+    var screamNotFade = new Screamer(optionsNotFade);
     var buttonNotFade = document.querySelector('#notFade');
     buttonNotFade.addEventListener('click', function(){
         screamNotFade.notify();
