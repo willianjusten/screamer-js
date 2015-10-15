@@ -23,7 +23,7 @@ describe('Instantiation:', function() {
     expect(screamObj instanceof window.Screamer).toBeTruthy();
   });
 
-  it('should call notify without param', function() {
+  it('should call notify without param and throw an error', function() {
     expect(function(){
       screamError = new Screamer();
     }).toThrow();
@@ -31,9 +31,14 @@ describe('Instantiation:', function() {
 });
 
 describe('Parameters:', function() {
-  it("should instantiate the Screamer object with title", function() {
+  it("should instantiate the Screamer object with title and verify title", function() {
     screamObj = new Screamer({'title': 'Hello'});
     expect(screamObj.options.title).toEqual('Hello');
+  });
+
+  it("should instantiate the Screamer object with title with quotes and accents", function() {
+    screamObj = new Screamer({'title': 'A matéria "teste" foi publicada.'});
+    expect(screamObj.options.title).toEqual('A matéria "teste" foi publicada.');
   });
   
   it("should instantiate the Screamer object with body and icon", function() {
