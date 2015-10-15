@@ -43,7 +43,7 @@
 
     Screamer.prototype.notify = function() {
         if(this.checkPermission()){
-            var notify = new Notification(options.title, options);
+            var notify = new Notification(this.options.title, this.options);
 
             if(this.options.fade){
                 this.fadeNotification(notify, this.options.fade);
