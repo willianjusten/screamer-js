@@ -50,10 +50,18 @@
             };
 
             var notify = new Notification(this.title, options);
+
+            if(this.options.fade){
+                this.fadeNotification(notify, this.options.fade);
+            }
         }
         else {
             console.log("Permission Denied!");
         }
+    };
+
+    Screamer.prototype.fadeNotification = function(notify, timeout) {
+        setTimeout(notify.close.bind(notify), timeout);
     };
 
 }());

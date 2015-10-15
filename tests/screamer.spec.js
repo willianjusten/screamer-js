@@ -36,12 +36,25 @@ describe('Parameters:', function() {
     expect(screamObj.title).toEqual('Hello');
   });
   
-  it("should instantiate the Screamer object with title and options", function() {
+  it("should instantiate the Screamer object with body and icon", function() {
     options = {
       'body': 'world',
       'icon': '../example/ico_sucesso.png'
     };
     screamObj = new Screamer('Hello', options);
     expect(screamObj.options).toEqual(options);
+  });
+
+  it("should instantiate the Screamer object with fade option", function() {
+    options = {
+      'fade': 5000 // time in ms
+    };
+    screamFade = new Screamer('Hello', options);
+    
+    spyOn(screamFade, 'fadeNotification');
+    
+    screamFade.fadeNotification();
+    expect(screamFade.fadeNotification).toHaveBeenCalled();
+
   });
 });
