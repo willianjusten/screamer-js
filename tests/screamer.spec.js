@@ -10,15 +10,15 @@ describe("A suite", function() {
   });
 
   it("should verify if browser supports Notification API", function(){
-    scream.verifySupport();
+    expect(Screamer.verifySupport()).toBeTruthy();
   });
 
   it("should checkPermission", function(){
-    scream.checkPermission();
+    expect(Screamer.checkPermission()).toBeTruthy();
   });
 
 
   it("should start Nofitication", function(){
-    scream.notify();
+    
   });
 });

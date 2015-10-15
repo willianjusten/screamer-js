@@ -1,14 +1,41 @@
 ;(function() {
-    // Define our constructor
-    this.Screamer = function() {
+    // Define Global variables
+    var Notification = window.Notification;
 
+    // Define our constructor
+    Screamer = function() {
+    
     };
 
-
     // Public Methods
-    Screamer.prototype.checkPermission = function() {};
 
-    Screamer.prototype.notify = function() {};
+    Screamer.verifySupport = function() {
+        if (!Notification){
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
 
-    Screamer.prototype.verifySupport = function() {};
+    Screamer.checkPermission = function() {
+        if (this.verifySupport() === true) {
+            if(Notification.permission === 'granted'){
+                return true;
+            }
+            else if(Notification.permission !== 'denied'){
+                Notification.requestPermission(function(permission){
+                    if (permission == 'granted'){
+                        return true;
+                    }
+                });
+            }
+        }
+        else {
+            return false;
+        }
+    };
+
+    Screamer.notify = function() {};
+
 }());
