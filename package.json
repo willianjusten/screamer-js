@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "test"
+    "test": "./node_modules/karma/bin/karma start --singleRun"
   },
   "repository": {
     "type": "git",
