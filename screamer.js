@@ -45,7 +45,8 @@
     Screamer.prototype.notify = function() {
         if(this.checkPermission()){
             options = {
-                'body': this.options.body
+                'body': this.options.body,
+                'icon': this.options.icon
             };
 
             var notify = new Notification(this.title, options);

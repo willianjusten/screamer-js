@@ -1,3 +1,4 @@
+// API stuff
 describe("Support:", function() {
   it("should verify if browser supports Notification API", function(){
     scream = new Screamer('hello');
@@ -5,6 +6,17 @@ describe("Support:", function() {
   });
 });
 
+describe('Permissions:', function() {
+  it("should checkPermission and it's granted", function(){
+    expect(scream.checkPermission('granted')).toBeTruthy();
+  });
+
+  it("should checkPermission and it's denied", function(){
+    expect(scream.checkPermission('denied')).toBeFalsy();
+  });
+});
+
+// Plugin stuff
 describe('Instantiation:', function() {
   it("should instantiate the Screamer object", function() {
     screamObj = new Screamer('Hello');
@@ -26,20 +38,10 @@ describe('Parameters:', function() {
   
   it("should instantiate the Screamer object with title and options", function() {
     options = {
-      body: 'world'
+      'body': 'world',
+      'icon': '../example/ico_sucesso.png'
     };
     screamObj = new Screamer('Hello', options);
     expect(screamObj.options).toEqual(options);
-  });
-
-});
-
-describe('Permissions:', function() {
-  it("should checkPermission and it's granted", function(){
-    expect(scream.checkPermission('granted')).toBeTruthy();
-  });
-
-  it("should checkPermission and it's denied", function(){
-    expect(scream.checkPermission('denied')).toBeFalsy();
   });
 });
