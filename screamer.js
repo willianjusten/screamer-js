@@ -3,11 +3,17 @@
     var Notification = window.Notification;
 
     // Define our constructor
-    Screamer = function() {
+    Screamer = function(title) {
 
         // Start the method requesting permission
         // to everything works
         Notification.requestPermission();
+
+        if (typeof title !== 'string') {
+            throw new Error('Notify(): first arg (title) must be a string.');
+        }
+
+        this.title = title;
     };
 
     // Public Methods
@@ -37,7 +43,7 @@
 
     Screamer.prototype.notify = function() {
         if(this.checkPermission()){
-            var notify = new Notification();
+            var notify = new Notification(this.title);
         }
         else {
             console.log("Permission Denied!");
