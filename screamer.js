@@ -44,11 +44,6 @@
 
     Screamer.prototype.notify = function() {
         if(this.checkPermission()){
-            options = {
-                'body': this.options.body,
-                'icon': this.options.icon
-            };
-
             var notify = new Notification(this.title, options);
 
             if(this.options.fade){
@@ -63,5 +58,4 @@
     Screamer.prototype.fadeNotification = function(notify, timeout) {
         setTimeout(notify.close.bind(notify), timeout);
     };
-
 }());

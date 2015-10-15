@@ -5,7 +5,8 @@
 </head>
 <body>
     <h1>Notification API Teste!</h1>
-    <button>Notify me!</button>
+    <button id="fade">Notify me with fade!</button>
+    <button id="notFade">Notify me without fade!</button>
 </body>
 
 <script src="../screamer.js"></script>
@@ -17,9 +18,22 @@
     };
 
     var scream = new Screamer('Hello', options);
-    var button = document.querySelector('button');
+    var button = document.querySelector('#fade');
     button.addEventListener('click', function(){
         scream.notify();
     });
+
+    var optionsNotFade = {
+        'body': 'world',
+        'icon': 'ico_sucesso.png',
+    };
+
+    var screamNotFade = new Screamer('Hello', optionsNotFade);
+    var buttonNotFade = document.querySelector('#notFade');
+    buttonNotFade.addEventListener('click', function(){
+        screamNotFade.notify();
+    });
+
+
 </script>
 </html>

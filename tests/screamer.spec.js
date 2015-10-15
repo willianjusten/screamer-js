@@ -49,12 +49,8 @@ describe('Parameters:', function() {
     options = {
       'fade': 5000 // time in ms
     };
-    screamFade = new Screamer('Hello', options);
-    
+    var screamFade = new Screamer('Hello', options);
     spyOn(screamFade, 'fadeNotification');
-    
-    screamFade.fadeNotification();
     expect(screamFade.fadeNotification).toHaveBeenCalled();
-
   });
 });
