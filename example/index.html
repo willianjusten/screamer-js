@@ -10,7 +10,7 @@
 
 <script src="../screamer.js"></script>
 <script type="text/javascript">
-    var scream = new Screamer();
+    var scream = new Screamer('Hello', {'body': 'world'});
     var button = document.querySelector('button');
     button.addEventListener('click', function(){
         scream.notify();

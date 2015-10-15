@@ -3,7 +3,7 @@
     var Notification = window.Notification;
 
     // Define our constructor
-    Screamer = function(title) {
+    Screamer = function(title, options) {
 
         // Start the method requesting permission
         // to everything works
@@ -14,6 +14,7 @@
         }
 
         this.title = title;
+        this.options = options;
     };
 
     // Public Methods
@@ -43,7 +44,11 @@
 
     Screamer.prototype.notify = function() {
         if(this.checkPermission()){
-            var notify = new Notification(this.title);
+            options = {
+                'body': this.options.body
+            };
+
+            var notify = new Notification(this.title, options);
         }
         else {
             console.log("Permission Denied!");

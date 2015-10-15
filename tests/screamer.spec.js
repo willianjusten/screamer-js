@@ -18,6 +18,22 @@ describe('Instantiation:', function() {
   });
 });
 
+describe('Parameters:', function() {
+  it("should instantiate the Screamer object with title", function() {
+    screamObj = new Screamer('Hello');
+    expect(screamObj.title).toEqual('Hello');
+  });
+  
+  it("should instantiate the Screamer object with title and options", function() {
+    options = {
+      body: 'world'
+    };
+    screamObj = new Screamer('Hello', options);
+    expect(screamObj.options).toEqual(options);
+  });
+
+});
+
 describe('Permissions:', function() {
   it("should checkPermission and it's granted", function(){
     expect(scream.checkPermission('granted')).toBeTruthy();
