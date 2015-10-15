@@ -4,26 +4,25 @@
 
     // Define our constructor
     Screamer = function() {
-    
+
+        // Start the method requesting permission
+        // to everything works
+        Notification.requestPermission();
     };
 
     // Public Methods
-
-    Screamer.verifySupport = function() {
-        if (!Notification){
-            return false;
-        }
-        else {
-            return true;
-        }
+    Screamer.prototype.verifySupport = function() {
+        return (!Notification) ? false : true;
     };
 
-    Screamer.checkPermission = function() {
+    Screamer.prototype.checkPermission = function(perm) {
+        var permission = (perm === 'granted') ? perm : Notification.permission;
+
         if (this.verifySupport() === true) {
-            if(Notification.permission === 'granted'){
+            if(permission === 'granted'){
                 return true;
             }
-            else if(Notification.permission !== 'denied'){
+            else if(permission !== 'denied'){
                 Notification.requestPermission(function(permission){
                     if (permission == 'granted'){
                         return true;
@@ -36,6 +35,13 @@
         }
     };
 
-    Screamer.notify = function() {};
+    Screamer.prototype.notify = function() {
+        if(this.checkPermission()){
+            var notify = new Notification();
+        }
+        else {
+            console.log("Permission Denied!");
+        }
+    };
 
 }());
