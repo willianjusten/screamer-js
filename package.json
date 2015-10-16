@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --singleRun"
+    "test": "./node_modules/karma/bin/karma start --browsers Firefox --singleRun"
   },
   "repository": {
     "type": "git",
