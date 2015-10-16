@@ -8,12 +8,14 @@ root = true
 end_of_line = lf
 insert_final_newline = true
 
+# Remove extra space at the end of line
+trim_trailing_whitespace = true
+
 # Set default charset
 [*.js]
 charset = utf-8
 
 # 4 space indentation
-[*.js]
 indent_style = space
 indent_size = 4
 
@@ -21,3 +23,7 @@ indent_size = 4
 [{package.json,.travis.yml}]
 indent_style = space
 indent_size = 2
+
+# Markdown files need maintaining extra space at the end of line
+[*.md]
+trim_trailing_whitespace = false
