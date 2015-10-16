@@ -1,6 +1,6 @@
 {
-  "name": "notification-message",
-  "version": "1.0.0",
+  "name": "screamerjs",
+  "version": "1.0.1",
   "description": "A simple test of notification API.",
   "main": "screamer.js",
   "directories": {
@@ -12,25 +12,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/willianjusten/notification-message.git"
+    "url": "https://github.com/willianjusten/screamer-js.git"
   },
   "keywords": [
     "notify",
     "js"
   ],
   "author": "Paulo Oliveira, Willian Justen",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/willianjusten/notification-message/issues"
+    "url": "https://github.com/willianjusten/screamer-js/issues"
   },
-  "homepage": "https://github.com/willianjusten/notification-message",
+  "homepage": "https://github.com/willianjusten/screamer-js",
   "devDependencies": {
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.11",
-    "karma-cli": "^0.1.1",
     "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "phantomjs": "^1.9.18"
   }
 }
