@@ -1,18 +1,17 @@
 // API stuff
 describe("Support:", function() {
     it("should verify if browser supports Notification API", function(){
-        scream = new Screamer({'title': 'hello'});
-        expect(scream.verifySupport()).toBeTruthy();
+        expect(Screamer.verifySupport()).toBeTruthy();
     });
 });
 
 describe('Permissions:', function() {
     it("should checkPermission and it's granted", function(){
-        expect(scream.checkPermission('granted')).toBeTruthy();
+        expect(Screamer.checkPermission('granted')).toBeTruthy();
     });
 
     it("should checkPermission and it's denied", function(){
-        expect(scream.checkPermission('denied')).toBeFalsy();
+        expect(Screamer.checkPermission('denied')).toBeFalsy();
     });
 });
 
@@ -29,13 +28,14 @@ describe('Instantiation:', function() {
         }).toThrow();
     });
 
-    it('should call notify with title different than string', function() {
+    it('should call notify with title different than string and throw an error', function() {
         expect(function(){
           screamError = new Screamer({'title': 123});
         }).toThrow();
     });
 });
 
+// test parameters
 describe('Parameters:', function() {
     it("should instantiate the Screamer object with title and verify title", function() {
         screamObj = new Screamer({'title': 'Hello'});
@@ -47,7 +47,7 @@ describe('Parameters:', function() {
         expect(screamObj.options.title).toEqual('A matéria "teste" foi publicada.');
     });
 
-    it("should instantiate the Screamer object with body and icon", function() {
+    it("should instantiate the Screamer object with many options and wait same options", function() {
         options = {
           'title': 'hello',
           'body': 'world',

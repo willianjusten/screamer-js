@@ -4,7 +4,6 @@
  * License: MIT license
  */
 
-
 ;(function() {
     // Define Global variables
     var Notification = window.Notification;
@@ -46,7 +45,7 @@
      * 
      * @return {boolean}
      */
-    Screamer.prototype.verifySupport = function() {
+    Screamer.verifySupport = function() {
         return (!Notification) ? false : true;
     };
 
@@ -57,10 +56,10 @@
      * @param  {string} - just for test purposes
      * @return {boolean}
      */
-    Screamer.prototype.checkPermission = function(perm) {
+    Screamer.checkPermission = function(perm) {
         var permission = (perm === 'granted') ? perm : Notification.permission;
 
-        if (this.verifySupport() === true) {
+        if (Screamer.verifySupport() === true) {
             if(permission === 'granted'){
                 return true;
             }
@@ -92,7 +91,7 @@
      * If not allowed. should fail sillently and logs that.
      */
     Screamer.prototype.notify = function() {
-        if(this.checkPermission()){
+        if(Screamer.checkPermission()){
             var notify = new Notification(this.options.title, this.options);
 
             if(this.options.fade){
@@ -103,5 +102,4 @@
             console.log("Permission Denied!");
         }
     };
-
 }());
