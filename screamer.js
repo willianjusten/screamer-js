@@ -5,15 +5,16 @@
  */
 
 ;(function() {
+    'use strict';
     // Define Global variables
     var Notification = window.Notification;
 
     /**
      * Our constructor
-     * 
+     *
      * @param {object}
      */
-    Screamer = function(options) {
+    var Screamer = function(options) {
 
         /**
          * Start the method requesting permission
@@ -33,7 +34,7 @@
          * Our options passed to Notification
          * look at https://developer.mozilla.org/en-US/docs/Web/API/notification
          * to more options.
-         * 
+         *
          * @type {object}
          */
         this.options = options;
@@ -42,7 +43,7 @@
     /**
      * This method should return if browser supports
      * Web Notifications.
-     * 
+     *
      * @return {boolean}
      */
     Screamer.verifySupport = function() {
@@ -52,7 +53,7 @@
     /**
      * Check if support exists and verify if permission exists,
      * if not, requests a permission and verify if granted.
-     * 
+     *
      * @param  {string} - just for test purposes
      * @return {boolean}
      */
@@ -78,7 +79,7 @@
 
     /**
      * This fade the notification.
-     * 
+     *
      * @param  {object} - object created by notify
      * @param  {int} - time in miliseconds
      */
@@ -102,4 +103,6 @@
             console.log("Permission Denied!");
         }
     };
+
+    window.Screamer = Screamer;
 }());
