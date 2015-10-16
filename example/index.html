@@ -8,15 +8,18 @@
 <body>
     <h1>Screamer</h1>
     <button id="fade">Notify me with fade!</button>
-    <button id="notFade">Notify me without fade!</button>
+    <button id="notFade">Notify me with warning!</button>
+    <button id="error">Notify me with error!</button>
 </body>
 
 <script src="../screamer.js"></script>
 <script type="text/javascript">
+
+    // Success with Fade
     var options = {
-        'title': 'Hello',
-        'body': 'world!',
-        'icon': 'ico_sucesso.png',
+        'title': 'Success!',
+        'body': 'Lorem ipsum dolor sit amet.',
+        'icon': 'icon_success.png',
         'fade': 1000
     };
 
@@ -26,16 +29,30 @@
         scream.notify();
     });
 
+    // Warning without fade
     var optionsNotFade = {
-        'title': 'Hello',
-        'body': 'A matéria "teste" foi publicada com sucesso!',
-        'icon': 'ico_sucesso.png',
+        'title': 'Warning!',
+        'body': 'Lorem ipsum dolor sit amet.',
+        'icon': 'icon_warning.png',
     };
 
     var screamNotFade = new Screamer(optionsNotFade);
     var buttonNotFade = document.querySelector('#notFade');
     buttonNotFade.addEventListener('click', function(){
         screamNotFade.notify();
+    });
+
+    // Error without fade
+    var optionsError = {
+        'title': 'Warning!',
+        'body': 'Lorem ipsum dolor sit amet.',
+        'icon': 'icon_error.png',
+    };
+
+    var screamError = new Screamer(optionsError);
+    var buttonError = document.querySelector('#error');
+    buttonError.addEventListener('click', function(){
+        screamError.notify();
     });
 </script>
 </html>
