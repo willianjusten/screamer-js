@@ -4,12 +4,48 @@
     <meta charset="utf-8">
     <title>Screamer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        h1 {
+            background: url('../screamer.jpg') no-repeat center;
+            height: 400px;
+            text-align: center;
+            width: 400px;
+            margin: 0 auto;
+        }
+        button{
+            background: url('notify-sprite.png') no-repeat;
+            cursor: pointer;
+            display: block;
+            height: 82px;
+            margin: 15px auto 0;
+            position: relative;
+            width: 363px;
+        }
+        button:focus{
+            outline: none;
+        }
+        #fade{
+            background-position:  -1px -1px;
+        }
+        #notFade{
+            background-position:  -1px -97px;
+        }
+        #error{
+            background-position:  -2px -194px;
+        }
+    </style>
 </head>
 <body>
     <h1>Screamer</h1>
-    <button id="fade">Notify me with fade!</button>
-    <button id="notFade">Notify me with warning!</button>
-    <button id="error">Notify me with error!</button>
+    <p class="fade">
+        <button id="fade" alt='Notify me with fade!'></button>
+    </p>
+    <p class="notFade">
+        <button id="notFade" alt='Notify me with warning!'></button>
+    </p>
+    <p class="error">
+        <button id="error" alt='Notify me with error!'></button>
+    </p>
 </body>
 
 <script src="../screamer.js"></script>
@@ -17,8 +53,8 @@
 
     // Success with Fade
     var options = {
-        'title': 'Success!',
-        'body': 'Lorem ipsum dolor sit amet.',
+        'title': 'Click me to view Success with fade!',
+        'body': 'Notify me with fade!',
         'icon': 'icon_success.png',
         'fade': 1000
     };
@@ -31,8 +67,8 @@
 
     // Warning without fade
     var optionsNotFade = {
-        'title': 'Warning!',
-        'body': 'Lorem ipsum dolor sit amet.',
+        'title': 'Click me to view Warning!',
+        'body': 'Notify me with warning!',
         'icon': 'icon_warning.png',
     };
 
@@ -44,8 +80,8 @@
 
     // Error without fade
     var optionsError = {
-        'title': 'Warning!',
-        'body': 'Lorem ipsum dolor sit amet.',
+        'title': 'Click me to view Warning!',
+        'body': 'Notify me with error!',
         'icon': 'icon_error.png',
     };
 
