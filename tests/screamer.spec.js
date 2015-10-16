@@ -28,6 +28,12 @@ describe('Instantiation:', function() {
           screamError = new Screamer();
         }).toThrow();
     });
+
+    it('should call notify with title different than string', function() {
+        expect(function(){
+          screamError = new Screamer({'title': 123});
+        }).toThrow();
+    });
 });
 
 describe('Parameters:', function() {
