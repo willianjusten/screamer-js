@@ -22,6 +22,11 @@ describe('Instantiation:', function() {
         expect(screamObj instanceof window.Screamer).toBeTruthy();
     });
 
+    it("should instantiate the Screamer object even without new operator", function() {
+        screamObj = Screamer({'title': 'hello without new'});
+        expect(screamObj instanceof window.Screamer).toBeTruthy();
+    });
+
     it('should call notify without param and throw an error', function() {
         expect(function(){
           screamError = new Screamer();
