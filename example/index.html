@@ -21,8 +21,9 @@
             min-height: 300px;
         }
         h1 {
-            font-size: 4em;
+            font-size: 3em;
             text-align: center;
+            margin-bottom: 15px;
         }
 
         .minion{
@@ -30,11 +31,17 @@
         }
 
         .minion img{
-            max-width: 250px;
+            max-width: 200px;
+            margin-top: 50px;
         }
         .screamer-buttons__box {
             margin: auto;
-            width: 400px;
+            text-align: center;
+        }
+
+        .screamer-buttons p {
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         .screamer-buttons__link {
@@ -42,13 +49,15 @@
         }
 
         .screamer-button {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
+            margin: 20px 15px;
             border-radius: 50%;
             background: #000;
             display: inline-block;
-            margin: 40px 10px;
             cursor: pointer;
+            border: none;
+            outline: none;
         }
 
         .screamer-green {
@@ -69,23 +78,25 @@
                 background-image: linear-gradient(to bottom, #facb4b 480px, #0b1825 480px);
             }
 
-            .minion{
-                margin-top: 50px;
-            }
-
             .minion,
             .screamer-buttons {
                 width: 45%;
                 margin-left: 40px;
-                display: inline-block;
+                display: block;
+                float: left;
             }
 
             .minion img {
                 max-width: 100%;
             }
 
+            .screamer-button {
+                width: 80px;
+                height: 80px;
+                margin: 40px 10px;
+            }
+
             .screamer-buttons {
-                position: absolute;
                 text-align: center;
                 margin-top: 150px;
             }
@@ -93,7 +104,7 @@
 
         @media (min-width: 56.313em) and (max-width: 75em){
             .minion{
-                margin-top: 180px;
+                margin-top: 80px;
             }
 
             body{
@@ -118,10 +129,10 @@
             <p>Screamer.js is a Vanilla Javascript plugin to provide simple yet fully customisable web notifications using <a href="http://www.w3.org/TR/notifications/" class="screamer-buttons__link">Web Notifications API</a>.</p>
 
             <div class="screamer-buttons__box">
-                <div id="fade" class="screamer-button screamer-green"></div>
-                <div id="notFade" class="screamer-button screamer-yellow"></div>
-                <div id="error" class="screamer-button screamer-red"></div>
-                <p>Click on the buttons to call a Notification.</p>
+                <button id="fade" class="screamer-button screamer-green" title="Press me"></button>
+                <button id="notFade" class="screamer-button screamer-yellow" title="Press me"></button>
+                <button id="error" class="screamer-button screamer-red" title="Press me"></button>
+                <p class="call-click">Click on the buttons to call a Notification.</p>
             </div>
         </section>
     </main>
