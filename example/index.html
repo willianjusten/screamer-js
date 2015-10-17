@@ -13,27 +13,32 @@
         html, body {
             height: 100%;
         }
+
+        body{
+            padding: 0 20px;
+            font-family: sans-serif;
+            background-color: #facb4b;
+            min-height: 300px;
+        }
         h1 {
             font-size: 4em;
             text-align: center;
         }
 
-        main {
-            z-index: 9999;
-            position: absolute;
-        }
-        .minion,
-        .screamer-buttons {
-            width: 45%;
-            margin-left: 40px;
-            display: inline-block;
+        .minion{
+            text-align: center;
         }
 
-        .screamer-buttons {
-            position: absolute;
-            text-align: center;
-            margin-top: 150px;
-            font-family: sans-serif;
+        .minion img{
+            max-width: 250px;
+        }
+        .screamer-buttons__box {
+            margin: auto;
+            width: 400px;
+        }
+
+        .screamer-buttons__link {
+            color: #1E90FF;
         }
 
         .screamer-button {
@@ -58,50 +63,67 @@
             background: #f40f02;
         }
 
-        .minion img {
-            max-width: 100%;
-            margin: 50px 25px;
+        @media (min-width: 56.250em){
+            body{
+                background-image: -webkit-linear-gradient(top, #facb4b 480px, #0b1825 480px);
+                background-image: linear-gradient(to bottom, #facb4b 480px, #0b1825 480px);
+            }
+
+            .minion{
+                margin-top: 50px;
+            }
+
+            .minion,
+            .screamer-buttons {
+                width: 45%;
+                margin-left: 40px;
+                display: inline-block;
+            }
+
+            .minion img {
+                max-width: 100%;
+            }
+
+            .screamer-buttons {
+                position: absolute;
+                text-align: center;
+                margin-top: 150px;
+            }
         }
 
-        .bg {
-            position: absolute;
-            width: 100%;
-            z-index: 1;
+        @media (min-width: 56.313em) and (max-width: 75em){
+            .minion{
+                margin-top: 180px;
+            }
+
+            body{
+                background-image: -webkit-linear-gradient(top, #facb4b 510px, #0b1825 510px);
+                background-image: linear-gradient(to bottom, #facb4b 510px, #0b1825 510px);
+            }
         }
 
-        body {
-            background: #facb4b;
-        }
-
-        .bg-yellow {
-            height: 500px;
-            background: #facb4b;
-        }
-
-        .bg-dark {
-            height: 200px;
-            background: #0b1825;
-            bottom: 0;
-        }
     </style>
 </head>
 <body>
-<a href='https://github.com/willianjusten/screamer-js' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #000000, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#000000;color:#ffffff;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:.5px; z-index: 10000;'>Fork me on GitHub</a>
-
-    <div class="bg bg-yellow"></div>
-    <div class="bg bg-dark"></div>
+    <a href='https://github.com/willianjusten/screamer-js' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #000000, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#000000;color:#ffffff;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:.5px; z-index: 10000;'>Fork me on GitHub</a>
 
     <main>
         <div class="minion">
             <img src="minion-notify.png" alt="Minion">
         </div>
-        <div class="screamer-buttons">
+
+        <section class="screamer-buttons">
             <h1>Screamer.JS</h1>
-            <div id="fade" class="screamer-button screamer-green"></div>
-            <div id="notFade" class="screamer-button screamer-yellow"></div>
-            <div id="error" class="screamer-button screamer-red"></div>
-            <p>Click on the buttons to call a Notification.</p>
-        </div>
+
+            <p>Screamer.js is a Vanilla Javascript plugin to provide simple yet fully customisable web notifications using <a href="http://www.w3.org/TR/notifications/" class="screamer-buttons__link">Web Notifications API</a>.</p>
+
+            <div class="screamer-buttons__box">
+                <div id="fade" class="screamer-button screamer-green"></div>
+                <div id="notFade" class="screamer-button screamer-yellow"></div>
+                <div id="error" class="screamer-button screamer-red"></div>
+                <p>Click on the buttons to call a Notification.</p>
+            </div>
+        </section>
     </main>
 </body>
 
