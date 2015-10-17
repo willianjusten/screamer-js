@@ -88,6 +88,14 @@ This library relies on [Web Notifications API](http://www.w3.org/TR/notification
 --- | --- | --- | --- | --- |
 31+ ✔ | 38+ ✔ | 32+ ✔ | 8+ ✔ | Nope ✘ |
 
+## Thanks
+
+This project would be nothing without this guys:
+
+- [Paulo Oliveira](https://github.com/paulopotter) - he create all the stuff with me.
+- [Natália Medina](https://github.com/ntmedina) - our designer and a lovely girl. (Coelhinha da Duracell!!)
+- [Rodrigo Machado](https://github.com/rcmachado) - he gave me the idea.
+
 ## License 
 
 This plugin is free and open source software, distributed under the The MIT License. So feel free to use this to create notifications for your site without linking back to me or using a disclaimer.
