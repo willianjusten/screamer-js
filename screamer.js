@@ -17,6 +17,14 @@
     var Screamer = function(options) {
 
         /**
+         * Auto initialize the object
+         * when new operator was forgoten
+         */
+        if(!(this instanceof Screamer)){
+            return new Screamer(options);
+        }
+
+        /**
          * Start the method requesting permission
          * to everything works
          */
