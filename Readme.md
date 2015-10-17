@@ -95,6 +95,7 @@ This project would be nothing without this guys:
 - [Paulo Oliveira](https://github.com/paulopotter) - he create all the stuff with me.
 - [Natália Medina](https://github.com/ntmedina) - our designer and a lovely girl. (Coelhinha da Duracell!!)
 - [Rodrigo Machado](https://github.com/rcmachado) - he gave me the idea.
+- [All contributors](https://github.com/willianjusten/screamer-js/graphs/contributors)
 
 ## License 
 
