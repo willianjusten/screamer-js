@@ -107,7 +107,7 @@
             }
         }
         else {
-            console.log("Permission Denied!");
+            console.log('Permission Denied!');
         }
     };
 
