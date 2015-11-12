@@ -4,8 +4,21 @@
  * License: MIT license
  */
 
-;(function() {
+/* global define, exports: true, module*/
+;(function(root, factory) {
     'use strict';
+
+    if(typeof define === 'function' && define.amd) {
+        define('Screamer', factory);
+    }
+    else if(typeof exports === 'object') {
+        exports = module.exports = factory();
+    }
+    else {
+        root.Screamer = factory();
+    }
+})(this, function() {
+    'use strict'; 
     // Define Global variables
     var Notification = window.Notification;
 
@@ -111,5 +124,5 @@
         }
     };
 
-    window.Screamer = Screamer;
-}());
+    return Screamer;
+});
