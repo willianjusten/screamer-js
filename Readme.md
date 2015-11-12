@@ -19,6 +19,22 @@ If you want to see how it works, take a look at the [DEMO](http://willianjusten.
 
 ## How to Use
 
+### CommonJS
+
+```js
+
+var Screamer = require('screamer');
+var notification = new Screamer(options);
+```
+
+### AMD
+
+```js
+define([ 'Screamer' ], function( Screamer ) {
+  var notification = new Screamer(options);
+});
+```
+
 To create the Notification you have to create a new instance of `Screamer`, set some options that you wish and use the `notify` method to start the notification. Take a look at this snippet:
 
 ```js
