@@ -4,8 +4,21 @@
  * License: MIT license
  */
 
-;(function() {
+/* global define, exports: true, module*/
+;(function(root, factory) {
     'use strict';
+
+    if(typeof define === 'function' && define.amd) {
+        define('Screamer', factory);
+    }
+    else if(typeof exports === 'object') {
+        exports = module.exports = factory();
+    }
+    else {
+        root.Screamer = factory();
+    }
+})(this, function() {
+    'use strict'; 
     // Define Global variables
     var Notification = window.Notification;
 
@@ -20,7 +33,7 @@
          * Auto initialize the object
          * when new operator was forgoten
          */
-        if(!(this instanceof Screamer)){
+        if (!(this instanceof Screamer)) {
             return new Screamer(options);
         }
 
@@ -68,20 +81,19 @@
     Screamer.checkPermission = function(perm) {
         var permission = (perm === 'granted') ? perm : Notification.permission;
 
-        if (Screamer.verifySupport() === true) {
-            if(permission === 'granted'){
-                return true;
-            }
-            else if(permission !== 'denied'){
-                Notification.requestPermission(function(permission){
-                    if (permission == 'granted'){
-                        return true;
-                    }
-                });
-            }
-        }
-        else {
+        if (!Screamer.verifySupport()) {
             return false;
+        }
+
+        if (permission === 'granted') {
+            return true;
+        }
+        else if (permission !== 'denied') {
+            Notification.requestPermission(function(permission) {
+                if (permission == 'granted') {
+                    return true;
+                }
+            });
         }
     };
 
@@ -100,17 +112,17 @@
      * If not allowed. should fail sillently and logs that.
      */
     Screamer.prototype.notify = function() {
-        if(Screamer.checkPermission()){
+        if (Screamer.checkPermission()) {
             var notify = new Notification(this.options.title, this.options);
 
-            if(this.options.fade){
+            if (this.options.fade) {
                 this.fadeNotification(notify, this.options.fade);
             }
         }
         else {
-            console.log("Permission Denied!");
+            console.log('Permission Denied!');
         }
     };
 
-    window.Screamer = Screamer;
-}());
+    return Screamer;
+});

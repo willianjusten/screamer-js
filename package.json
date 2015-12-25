@@ -1,7 +1,7 @@
 {
   "name": "screamerjs",
-  "version": "1.1.0",
-  "description": "A simple test of notification API.",
+  "version": "1.2.0",
+  "description": "Screamer.js is a Vanilla Javascript plugin to provide simple yet fully customisable web notifications using Web Notifications API",
   "main": "screamer.js",
   "directories": {
     "example": "example",
