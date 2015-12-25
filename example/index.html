@@ -72,6 +72,29 @@
             background: #f40f02;
         }
 
+        .fork {
+            position:fixed;
+            padding:5px 45px;
+            width:128px;
+            top:50px;
+            right:-50px;
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            -ms-transform:rotate(45deg);
+            transform:rotate(45deg);
+            box-shadow:0 0 0 3px #000000, 0 0 20px -3px rgba(0, 0, 0, 0.5);
+            text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);
+            background-color:#000000;
+            color:#ffffff;
+            font-size:13px;
+            font-family:sans-serif;
+            text-decoration:none;
+            font-weight:bold;
+            border:2px dotted #ffffff;
+            -webkit-backface-visibility:hidden;
+            z-index: 10000;
+        }
+
         @media (min-width: 56.250em){
             body{
                 background-image: -webkit-linear-gradient(top, #facb4b 480px, #0b1825 480px);
@@ -116,7 +139,7 @@
     </style>
 </head>
 <body>
-    <a href='https://github.com/willianjusten/screamer-js' style='position:fixed;padding:5px 45px;width:128px;top:50px;right:-50px;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);box-shadow:0 0 0 3px #000000, 0 0 20px -3px rgba(0, 0, 0, 0.5);text-shadow:0 0 0 #ffffff, 0 0 5px rgba(0, 0, 0, 0.3);background-color:#000000;color:#ffffff;font-size:13px;font-family:sans-serif;text-decoration:none;font-weight:bold;border:2px dotted #ffffff;-webkit-backface-visibility:hidden;letter-spacing:.5px; z-index: 10000;'>Fork me on GitHub</a>
+    <a href='https://github.com/willianjusten/screamer-js' class="fork">Fork me on GitHub</a>
 
     <main>
         <div class="minion">
@@ -159,7 +182,7 @@
     var optionsNotFade = {
         'title': 'Click me to view Warning!',
         'body': 'Notify me with warning!',
-        'icon': 'icon_warning.png',
+        'icon': 'icon_warning.png'
     };
 
     var screamNotFade = new Screamer(optionsNotFade);
@@ -172,7 +195,7 @@
     var optionsError = {
         'title': 'Click me to view Error!',
         'body': 'Notify me with error!',
-        'icon': 'icon_error.png',
+        'icon': 'icon_error.png'
     };
 
     var screamError = new Screamer(optionsError);
