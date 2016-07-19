@@ -18,7 +18,7 @@
         root.Screamer = factory();
     }
 })(this, function() {
-    'use strict'; 
+    'use strict';
     // Define Global variables
     var Notification = window.Notification;
 
@@ -108,15 +108,37 @@
     };
 
     /**
+     * This handle the 'onclose' event, which came from Notification
+     */
+    Screamer.onClose = function(options) {
+        if (typeof options.after === 'function') {
+            options.after();
+        }
+    }
+
+    Screamer.before = function(options) {
+        if (typeof options.before === 'function') {
+            options.before();
+        }
+    }
+
+    /**
      * It should be create a notification if permission is granted.
      * If not allowed. should fail sillently and logs that.
      */
     Screamer.prototype.notify = function() {
         if (Screamer.checkPermission()) {
-            var notify = new Notification(this.options.title, this.options);
+            var notify, options = this.options;
 
-            if (this.options.fade) {
-                this.fadeNotification(notify, this.options.fade);
+            Screamer.before(options);
+
+            notify = new Notification(options.title, options);
+            notify.onclose = function() {
+                Screamer.onClose(options)
+            }
+
+            if (options.fade) {
+                this.fadeNotification(notify, options.fade);
             }
         }
         else {

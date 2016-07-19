@@ -61,4 +61,18 @@ describe('Parameters:', function() {
         screamObj = new Screamer(options);
         expect(screamObj.options).toEqual(options);
     });
+
+    it("should instantiate the Screamer object with many options including before and after and wait same options", function() {
+        options = {
+          title: 'hello',
+          before: function() {
+            console.log('init');
+          },
+          after: function() {
+            console.log('finished');
+          }
+        };
+        screamObj = new Screamer(options);
+        expect(screamObj.options).toEqual(options);
+    });
 });

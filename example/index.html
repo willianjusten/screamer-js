@@ -164,12 +164,18 @@
 <script src="../screamer.js"></script>
 <script type="text/javascript">
 
-    // Success with Fade
+    // Success with Before, After and Fade
     var options = {
         'title': 'Click me to view Success with fade!',
         'body': 'Notify me with fade!',
         'icon': 'icon_success.png',
-        'fade': 1000
+        'fade': 1000,
+        before: function() {
+            console.log('before')
+        },
+        after: function() {
+            alert('after')
+        },
     };
 
     var scream = new Screamer(options);
