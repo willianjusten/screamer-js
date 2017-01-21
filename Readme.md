@@ -65,7 +65,7 @@ You can attach this to different events, like `onload`, `ready` or anything else
 - `lang` (string) - language of the notification. (default: en).
 - `timeout` (integer) - time in miliseconds to fade the notification.
 - `before` (function) - A callback function called before show the notification.
-- `after` (function) - A callback function called before show the notification.
+- `after` (function) - A callback function called after show the notification.
 
 ## Static Methods
 
